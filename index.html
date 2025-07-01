@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajkumar | Digital Consultant</title>
+
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+
+    <style>
+        <style>
+  /* General Section Padding */
+  section {
+    padding: 60px 5%;
+  }
+
+  /* HERO SECTION */
+  @media (max-width: 768px) {
+    #hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    #hero > div {
+      max-width: 100% !important;
+    }
+    #hero img {
+      width: 100%;
+      max-width: 90vw;
+      margin-top: 20px;
+    }
+    #hero h1 {
+      font-size: 30px;
+    }
+  }
+
+  /* SERVICES GRID */
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .service-box {
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .service-box {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .testimonials-track {
+    display: flex;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    min-width: 280px;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      flex: 0 0 85vw;
+    }
+  }
+
+  /* CONTACT SECTION */
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .contact form button {
+    padding: 12px;
+    background: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .contact > div {
+      flex-direction: column;
+    }
+
+    .contact-form,
+    .contact-info {
+      width: 100% !important;
+    }
+  }
+
+  /* FOOTER */
+  footer > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer div {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    footer > div {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    footer div {
+      width: 100% !important;
+    }
+
+    .footer-bottom {
+      text-align: center;
+    }
+  }
+
+
+
+
+
+
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        color: #333;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #222;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #555;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        transition: all 0.3s ease;
+      }
+      .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #0073e6, #00b4d8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .navbar nav {
+        display: flex;
+        gap: 30px;
+      }
+      .navbar nav a {
+        font-weight: 600;
+        color: #333;
+        transition: all 0.3s;
+        position: relative;
+      }
+      .navbar nav a:hover {
+        color: #0073e6;
+        transform: translateY(-2px);
+      }
+      .navbar nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 50%;
+        background: linear-gradient(135deg, #0073e6, #00b4d8);
+        transition: all 0.3s;
+        transform: translateX(-50%);
+      }
+      .navbar nav a:hover::after {
+        width: 100%;
+      }
+
+      /* HERO ENHANCED */
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 50px;
+        background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+        padding: 120px 20px 100px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 115, 230, 0.1) 0%,
+          transparent 70%
+        );
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+      .hero-text {
+        flex: 1 1 55%;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-text .greeting {
+        display: inline-block;
+        background: linear-gradient(135deg, #0073e6, #00b4d8);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      .hero-text h1 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #0a0a23;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+      .hero-text .subtitle {
+        font-size: 20px;
+        color: #666;
+        margin-bottom: 30px;
+        font-weight: 400;
+      }
+      .hero-stats {
+        display: flex;
+        gap: 30px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 24px;
+        font-weight: bold;
+        color: #0073e6;
+        display: block;
+      }
+      .stat-label {
+        font-size: 14px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+      .hero-buttons .btn-primary {
+        padding: 15px 30px;
+        background: linear-gradient(135deg, #0073e6, #005bb5);
+        color: white;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(0, 115, 230, 0.3);
+      }
+      .hero-buttons .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 115, 230, 0.4);
+      }
+      .hero-buttons .btn-secondary {
+        padding: 15px 30px;
+        background: transparent;
+        color: #0073e6;
+        border: 2px solid #0073e6;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+      .hero-buttons .btn-secondary:hover {
+        background: #0073e6;
+        color: white;
+        transform: translateY(-3px);
+      }
+      .hero-img {
+        flex: 1 1 40%;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-img img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .hero-img:hover img {
+        transform: scale(1.05);
+      }
+
+      /* ABOUT */
+      .about-images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .about-images div {
+        flex: 1 1 48%;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+      .about-images div:hover {
+        transform: scale(1.05);
+      }
+      .about-images img {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      /* SERVICES */
+      .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+      .service-box {
+        background: white;
+        padding: 40px 30px;
+        flex: 1 1 30%;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .service-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0073e6, #00b4d8);
+        transition: all 0.3s;
+        opacity: 0;
+      }
+      .service-box:hover::before {
+        left: 0;
+        opacity: 0.05;
+      }
+      .service-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+      .service-box i {
+        font-size: 48px;
+        background: linear-gradient(135deg, #0073e6, #00b4d8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+      }
+      .service-box h3 {
+        position: relative;
+        z-index: 2;
+      }
+      .service-box p {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* TESTIMONIALS ENHANCED WITH SCROLLER */
+      .testimonials {
+        background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+        padding: 100px 20px;
+      }
+      .testimonials-container {
+        position: relative;
+        overflow: hidden;
+        margin-top: 40px;
+      }
+      .testimonials-track {
+        display: flex;
+        gap: 30px;
+        animation: scroll 40s linear infinite;
+        width: calc(300px * 12 + 30px * 11); /* 12 testimonials + gaps */
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-300px * 6 - 30px * 5));
+        } /* Half the total width */
+      }
+      .testimonials-track:hover {
+        animation-play-state: paused;
+      }
+      .testimonial-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 20px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 80px;
+        color: rgba(0, 115, 230, 0.1);
+        font-family: serif;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+      .testimonial-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 4px solid #f0f8ff;
+      }
+      .testimonial-card p {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: #555;
+        line-height: 1.6;
+      }
+      .testimonial-card .rating {
+        color: #ffd700;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      /* CONTACT */
+      .contact-form {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 2px solid #f0f8ff;
+        border-radius: 10px;
+        font-family: inherit;
+        transition: all 0.3s;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #0073e6;
+        box-shadow: 0 0 10px rgba(0, 115, 230, 0.2);
+      }
+      .contact-form button {
+        background: linear-gradient(135deg, #0073e6, #005bb5);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(0, 115, 230, 0.3);
+      }
+      .contact-form button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 115, 230, 0.4);
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 80px 20px 60px;
+        }
+        .hero-text h1 {
+          font-size: 36px;
+        }
+        .hero-stats {
+          justify-content: center;
+        }
+        .about-content {
+          flex-direction: column;
+        }
+        .services-grid {
+          flex-direction: column;
+        }
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .navbar nav {
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 15px;
+        }
+        .testimonials-track {
+          animation: scroll 25s linear infinite;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Rajkumar Kathula</div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+ <!-- Font Awesome & AOS -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+rel="stylesheet"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- HERO SECTION -->
+<section
+id="hero"
+style="
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  background: linear-gradient(to right, #f4f8fb, #eaf3fb);
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+"
+>
+<!-- Text Content -->
+<div
+  style="flex: 1 1 45%; max-width: 600px; padding: 20px; z-index: 1;"
+  data-aos="fade-right"
+>
+  <p style="color: #0073e6; font-weight: 600; font-size: 16px;">
+    Trusted Business Partner
+  </p>
+  <h1
+    style="font-size: 42px; font-weight: 700; color: #0b1f3a; margin: 20px 0;"
+  >
+    We Build Your Business <br />
+    <span style="color: #0073e6;">With Our Experts</span>
+  </h1>
+  <p style="color: #444; margin-bottom: 30px; font-size: 16px;">
+    Transform your vision into scalable strategies. We provide expert
+    consultancy and digital solutions to help your business grow.
+  </p>
+
+  <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+    <a
+      href="#contact"
+      style="
+        background: #0073e6;
+        color: #fff;
+        padding: 14px 30px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+      "
+      >Start Your Project</a
+    >
+    <a
+      href="#services"
+      style="
+        border: 2px solid #0073e6;
+        color: #0073e6;
+        padding: 14px 30px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+      "
+      >View Services</a
+    >
+  </div>
+</div>
+
+<!-- Image Section -->
+<div
+  style="
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  "
+  data-aos="fade-left"
+>
+<!-- Option 1: Confident professional woman -->
+<!-- Hero Image -->
+
+<div
+  style="flex: 1 1 50%; display: flex; justify-content: center; align-items: center;"
+  data-aos="fade-left"
+>
+<div class="tilt-container" data-tilt data-tilt-max="15" data-tilt-speed="400">
+    <img
+      src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=800&q=80"
+      alt="Consultant"
+      style="width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);"
+    />
+  </div>
+  
+  <!-- Vanilla Tilt JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+</div>
+
+
+</section>
+
+<script>
+AOS.init({ duration: 1000, once: true });
+</script>
+
+
+<!-- AOS Initialization -->
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+
+<!-- AOS Initialization -->
+<script>
+AOS.init({ duration: 1000, once: true });
+</script>
+    <!-- Font Awesome CDN (include in your <head>) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+   <!-- Include AOS library (in your <head> or before </body>) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<section id="about" style="padding: 60px 20px; background: #fff;">
+  <div class="section-title" style="text-align: center; margin-bottom: 40px;" data-aos="fade-down">
+    <h2 style="font-size: 32px; font-weight: bold;">ABOUT <span style="color: #0073e6;">US</span></h2>
+    <p style="color: #555;">OUR <strong style="color: #0073e6;">3+ YEARS OF EXPERIENCE</strong> WILL HELP YOU TO GROW YOUR BUSINESS</p>
+    <p style="max-width: 700px; margin: 10px auto; color: #666;">
+      We turn innovative ideas into scalable business strategies. From startups to established enterprises, we empower organizations to thrive in the digital world.
+    </p>
+  </div>
+
+  <!-- Services Section -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 60px;">
+    <div style="flex: 1 1 250px; text-align: center;" data-aos="zoom-in-up" data-aos-delay="100">
+      <i class="fas fa-shield-alt" style="font-size: 32px; color: #0073e6;"></i>
+      <h4 style="margin-top: 15px;">SECURITY MANAGEMENT</h4>
+      <p style="color: #777;">Smart solutions to safeguard your digital operations and client data.</p>
+    </div>
+    <div style="flex: 1 1 250px; text-align: center;" data-aos="zoom-in-up" data-aos-delay="200">
+      <i class="fas fa-chart-line" style="font-size: 32px; color: #0073e6;"></i>
+      <h4 style="margin-top: 15px;">FINANCE PLANNING</h4>
+      <p style="color: #777;">Strategies to help optimize your business revenue and cash flow.</p>
+    </div>
+    <div style="flex: 1 1 250px; text-align: center;" data-aos="zoom-in-up" data-aos-delay="300">
+      <i class="fas fa-graduation-cap" style="font-size: 32px; color: #0073e6;"></i>
+      <h4 style="margin-top: 15px;">EDUCATIONAL SUPPORT</h4>
+      <p style="color: #777;">Resources and coaching to upskill your team for the future.</p>
+    </div>
+  </div>
+
+  <!-- Team / Image Grid Section -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <p style="color: #666; margin-bottom: 30px;" data-aos="fade-up">Meet the team driving innovation and results:</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&w=400&q=80" alt="Team 1" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;" data-aos="flip-left" />
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?fit=crop&w=400&q=80" alt="Team 2" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;" data-aos="flip-left" data-aos-delay="100" />
+      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?fit=crop&w=400&q=80" alt="Team 3" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;" data-aos="flip-left" data-aos-delay="200" />
+      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?fit=crop&w=400&q=80" alt="Team 4" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;" data-aos="flip-left" data-aos-delay="300" />
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?fit=crop&w=400&q=80" alt="Team 5" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;" data-aos="flip-left" data-aos-delay="400" />
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?fit=crop&w=400&q=80" alt="Team 6" style="width: 150px; height: 150px; border-radius: 8px; object-fit: cover;" data-aos="flip-left" data-aos-delay="500" />
+    </div>
+  </div>
+</section>
+
+<!-- Initialize AOS at the bottom of your HTML -->
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+    <section class="services" id="services">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Services we offer</h2>
+        <p>
+          Comprehensive digital solutions designed to accelerate your business
+          growth.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-box" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-chart-line"></i>
+          <h3>Digital Strategy</h3>
+          <p>
+            Comprehensive digital transformation roadmaps, competitive analysis,
+            and growth strategies tailored to your market.
+          </p>
+        </div>
+        <div class="service-box" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-bullhorn"></i>
+          <h3>Marketing Automation</h3>
+          <p>
+            Lead generation systems, email marketing campaigns, and conversion
+            optimization to maximize your ROI.
+          </p>
+        </div>
+        <div class="service-box" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-cogs"></i>
+          <h3>Process Optimization</h3>
+          <p>
+            Streamline operations, automate workflows, and implement systems
+            that scale with your business growth.
+          </p>
+        </div>
+        <div class="service-box" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fas fa-search-dollar"></i>
+          <h3>Financial Planning</h3>
+          <p>
+            Budget forecasting, financial modeling, and investment strategies to
+            ensure sustainable profitability.
+          </p>
+        </div>
+        <div class="service-box" data-aos="zoom-in" data-aos-delay="500">
+          <i class="fas fa-users"></i>
+          <h3>Team Development</h3>
+          <p>
+            Leadership coaching, team building strategies, and organizational
+            development for high-performance teams.
+          </p>
+        </div>
+        <div class="service-box" data-aos="zoom-in" data-aos-delay="600">
+          <i class="fas fa-rocket"></i>
+          <h3>Startup Consulting</h3>
+          <p>
+            From MVP development to market entry strategies, helping startups
+            build and scale successfully.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="section-title" data-aos="fade-up">
+        <h2>What Clients Say</h2>
+        <p>
+          Success stories from founders and executives who trusted me with their
+          vision.
+        </p>
+      </div>
+      <div class="testimonials-container">
+        <div class="testimonials-track">
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="Ananya Sharma"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Rajkumar's digital strategies transformed our entire business
+              model. We've seen a 300% increase in qualified leads and doubled
+              our revenue in just 6 months!"
+            </p>
+            <strong>Ananya Sharma</strong><br />
+            <span style="color: #777">Founder, RiseAI</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/men/45.jpg"
+              alt="Karthik Verma"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Professional, strategic, and always delivers beyond expectations.
+              Rajkumar helped us streamline operations and reduce costs by 40%."
+            </p>
+            <strong>Karthik Verma</strong><br />
+            <span style="color: #777">CEO, Verma Logistics</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/men/64.jpg"
+              alt="Nishant Rao"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Working with Rajkumar was a game-changer. His insights helped us
+              launch two new profitable verticals and expand into new markets."
+            </p>
+            <strong>Nishant Rao</strong><br />
+            <span style="color: #777">Director, Rao Fintech</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/32.jpg"
+              alt="Priya Mehta"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Rajkumar's marketing automation systems increased our conversion
+              rate by 250%. His strategic approach is simply outstanding."
+            </p>
+            <strong>Priya Mehta</strong><br />
+            <span style="color: #777">CMO, TechVision</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/men/78.jpg"
+              alt="Amit Singh"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "The financial planning and growth strategies provided by Rajkumar
+              helped us secure Series A funding worth $2M. Highly recommended!"
+            </p>
+            <strong>Amit Singh</strong><br />
+            <span style="color: #777">Co-founder, GreenTech Solutions</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/55.jpg"
+              alt="Sneha Patel"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Rajkumar's process optimization recommendations saved us 25 hours
+              per week and improved our team productivity significantly."
+            </p>
+            <strong>Sneha Patel</strong><br />
+            <span style="color: #777">Operations Head, DataFlow</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="Ananya Sharma"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Rajkumar's digital strategies transformed our entire business
+              model. We've seen a 300% increase in qualified leads and doubled
+              our revenue in just 6 months!"
+            </p>
+            <strong>Ananya Sharma</strong><br />
+            <span style="color: #777">Founder, RiseAI</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/men/45.jpg"
+              alt="Karthik Verma"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Professional, strategic, and always delivers beyond expectations.
+              Rajkumar helped us streamline operations and reduce costs by 40%."
+            </p>
+            <strong>Karthik Verma</strong><br />
+            <span style="color: #777">CEO, Verma Logistics</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/men/64.jpg"
+              alt="Nishant Rao"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Working with Rajkumar was a game-changer. His insights helped us
+              launch two new profitable verticals and expand into new markets."
+            </p>
+            <strong>Nishant Rao</strong><br />
+            <span style="color: #777">Director, Rao Fintech</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/32.jpg"
+              alt="Priya Mehta"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Rajkumar's marketing automation systems increased our conversion
+              rate by 250%. His strategic approach is simply outstanding."
+            </p>
+            <strong>Priya Mehta</strong><br />
+            <span style="color: #777">CMO, TechVision</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/men/78.jpg"
+              alt="Amit Singh"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "The financial planning and growth strategies provided by Rajkumar
+              helped us secure Series A funding worth $2M. Highly recommended!"
+            </p>
+            <strong>Amit Singh</strong><br />
+            <span style="color: #777">Co-founder, GreenTech Solutions</span>
+          </div>
+          <div class="testimonial-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/55.jpg"
+              alt="Sneha Patel"
+            />
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>
+              "Rajkumar's process optimization recommendations saved us 25 hours
+              per week and improved our team productivity significantly."
+            </p>
+            <strong>Sneha Patel</strong><br />
+            <span style="color: #777">Operations Head, DataFlow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Let's Work Together</h2>
+        <p>
+          Have a project in mind or just want to connect? Reach out and let's
+          talk growth.
+        </p>
+      </div>
+
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+          max-width: 1200px;
+          margin: auto;
+        "
+      >
+        <!-- Contact Info Cards -->
+        <div
+          style="
+            flex: 1 1 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          "
+        >
+          <div style="display: flex; align-items: center; gap: 15px">
+            <i class="fas fa-phone-alt fa-lg" style="color: #0073e6"></i>
+            <div>
+              <strong>Phone:</strong>
+              <p style="margin: 5px 0">+91 78932 24636<br />+91 78901 23456</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <i class="fas fa-envelope fa-lg" style="color: #0073e6"></i>
+            <div>
+              <strong>Email:</strong>
+              <p style="margin: 5px 0">
+                rajkumar.kathula15@gmail.com<br />info@rajkumar.com
+              </p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <i class="fas fa-map-marker-alt fa-lg" style="color: #0073e6"></i>
+            <div>
+              <strong>Location:</strong>
+              <p style="margin: 5px 0">Huzurabad, Telangana, India</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 15px">
+            <i class="fas fa-globe fa-lg" style="color: #0073e6"></i>
+            <div>
+              <strong>Website:</strong>
+              <p style="margin: 5px 0">www.rajkumarconsulting.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div
+          class="contact-form"
+          style="flex: 1 1 50%"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <form>
+            <input type="text" placeholder="Your Full Name" required />
+            <input type="email" placeholder="Your Email Address" required />
+            <input type="text" placeholder="Company Name (Optional)" />
+            <textarea
+              placeholder="Tell me about your project and goals..."
+              rows="6"
+              required
+            ></textarea>
+            <button type="submit">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-dR9EsBCM1vjfgEO4yJ7Fy0Znh62YH8z4jWObSCGAmXdeidPL1lwq2a4/jX1F4XRXJ+jaXs7A5fRDMoxzN5wFug=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </head>
+
+    <footer
+      style="
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
+        padding: 60px 20px 30px;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 1200px;
+          margin: auto;
+          gap: 40px;
+        "
+      >
+        <!-- Include Font Awesome in the <head> if not already -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+
+        <div style="flex: 1 1 20%; min-width: 200px">
+          <h3 style="color: #00c3ff">
+            <i class="fas fa-user-tie" style="margin-right: 8px"></i> Rajkumar
+          </h3>
+          <p style="margin-top: 10px">
+            Your trusted partner for innovative digital strategies and
+            sustainable business growth.
+          </p>
+          <p style="margin-top: 15px">
+            <i
+              class="fas fa-map-marker-alt"
+              style="color: #00c3ff; margin-right: 8px"
+            ></i>
+            Huzurabad, Telangana, India
+          </p>
+          <p>
+            <i
+              class="fas fa-phone-alt"
+              style="color: #00c3ff; margin-right: 8px"
+            ></i>
+            +91 98765 43210
+          </p>
+          <p>
+            <i
+              class="fas fa-envelope"
+              style="color: #00c3ff; margin-right: 8px"
+            ></i>
+            rajkumar.kathula15@gmail.com
+          </p>
+        </div>
+
+        <div style="flex: 1 1 20%; min-width: 200px">
+          <h4><i class="fas fa-briefcase"></i> Service Links</h4>
+          <ul style="list-style: none; padding-left: 0">
+            <li>
+              <a href="#services" style="color: #fff"
+                ><i class="fas fa-angle-right"></i> Digital Strategy</a
+              >
+            </li>
+            <li>
+              <a href="#services" style="color: #fff"
+                ><i class="fas fa-angle-right"></i> Marketing Automation</a
+              >
+            </li>
+            <li>
+              <a href="#services" style="color: #fff"
+                ><i class="fas fa-angle-right"></i> Process Optimization</a
+              >
+            </li>
+            <li>
+              <a href="#services" style="color: #fff"
+                ><i class="fas fa-angle-right"></i> Financial Planning</a
+              >
+            </li>
+            <li>
+              <a href="#services" style="color: #fff"
+                ><i class="fas fa-angle-right"></i> Team Development</a
+              >
+            </li>
+            <li>
+              <a href="#services" style="color: #fff"
+                ><i class="fas fa-angle-right"></i> Startup Consulting</a
+              >
+            </li>
+            <li>
+              <a href="#contact" style="color: #fff"
+                ><i class="fas fa-question-circle"></i> FAQs</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div style="flex: 1 1 20%; min-width: 200px">
+          <h4><i class="fas fa-newspaper"></i> Recent News</h4>
+          <p>
+            <i class="far fa-calendar-alt"></i> June 15, 2025 –
+            <strong>AI in Business Webinar</strong>
+          </p>
+          <p>
+            <i class="far fa-calendar-alt"></i> May 28, 2025 –
+            <strong>New Partnership</strong>
+          </p>
+          <p>
+            <i class="far fa-calendar-alt"></i> April 10, 2025 –
+            <strong>Client Success Story</strong>
+          </p>
+        </div>
+        <div style="flex: 1 1 20%; min-width: 200px">
+          <h4><i class="fas fa-envelope-open-text"></i> Subscribe</h4>
+          <p>Get our latest insights and updates.</p>
+          <form style="margin-top: 10px; display: flex">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              style="
+                padding: 10px;
+                flex: 1;
+                border: none;
+                border-radius: 5px 0 0 5px;
+              "
+            />
+            <button
+              style="
+                padding: 10px;
+                background: #00c3ff;
+                border: none;
+                color: #fff;
+                border-radius: 0 5px 5px 0;
+                cursor: pointer;
+              "
+            >
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- New Footer Section -->
+        <div style="flex: 1 1 100%; min-width: 200px">
+          <h4><i class="fas fa-lightbulb"></i> Insights & Resources</h4>
+          <p>
+            <i class="fas fa-book"></i> Free eBooks, templates, and guides to
+            boost your digital growth journey. Coming soon!
+          </p>
+        </div>
+      </div>
+      <div
+        style="
+          text-align: center;
+          padding: 20px;
+          border-top: 1px solid #444;
+          margin-top: 30px;
+          font-size: 14px;
+        "
+      >
+        ©2025 Rajkumar | Crafted for a better digital presence
+        <div style="margin-top: 10px">
+          <a href="#" style="margin: 0 10px; color: #00c3ff"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" style="margin: 0 10px; color: #00c3ff"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" style="margin: 0 10px; color: #00c3ff"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="#" style="margin: 0 10px; color: #00c3ff"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" style="margin: 0 10px; color: #00c3ff"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: false,
+      });
+    </script>
+  </body>
+</html>
