@@ -1,1 +1,1 @@
-Leveling up each day
+Leveling up each day.
